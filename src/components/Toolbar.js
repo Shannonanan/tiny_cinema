@@ -38,9 +38,9 @@ render(){
     <i className="fa fa-caret-down"></i>
   </button>
   <div className="dropdown-content">
-    <a href="#" ><Link to="/containers">App</Link></a>
-    <a href="#"><Link to="/components/BestMoviesFrom">BestMoviesFrom</Link></a>
-    <a href="#"><Link to="/components/MoviesInTheatres">MoviesInTheatres</Link></a>
+    <a href="#" ><Link to="/containers">Most popular</Link></a>
+    <a href="#"><Link to="/components/BestMoviesFrom">Best movies from...</Link></a>
+    <a href="#"><Link to="/components/MoviesInTheatres">Movies in theatres</Link></a>
   </div>
  </div> 
  <p className="push" id="title" href="" >TinyCinema</p>

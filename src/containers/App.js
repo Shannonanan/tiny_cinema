@@ -22,10 +22,11 @@ class App extends Component {
   render() {
     const {movies} = this.state;
     
-    return !movies.length ?
+    return typeof(movies) == 'undefined' ?
         <h1>Loading...</h1> :
        (
         <div className = 'tc'>
+        <h1>Most Popular movies</h1>
         <Scroll>
         <MoviesList movies={movies}/>
         </Scroll>
