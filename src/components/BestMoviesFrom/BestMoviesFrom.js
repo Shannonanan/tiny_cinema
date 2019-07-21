@@ -14,7 +14,7 @@ class BestMoviesFrom extends React.Component {
 	}
 
 componentDidMount(){
-	fetch('https://api.themoviedb.org/3/discover/movie?primary_release_year=2019&sort_by=vote_average.desc&&api_key=')
+	fetch('https://api.themoviedb.org/3/discover/movie?primary_release_year=2015&sort_by=vote_average.desc&&api_key=&language=en-US')
 	.then(response => response.json())
 	.then(response => {this.setState({movies: response.results})})
 }
@@ -25,7 +25,7 @@ componentDidMount(){
     return typeof(movies) == 'undefined' ?
         <h1>Loading...</h1> :
        (
-        <div className = 'tc'>
+        <div className = 'tc' >
         <h1>Best Movies From...</h1> 
         <Scroll>
         <MoviesList movies={movies}/>

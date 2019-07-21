@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Route, Link,Switch, BrowserRouter as Router } from 'react-router-dom';
 import BestMoviesFrom from './BestMoviesFrom/BestMoviesFrom';
 import MoviesInTheatres from './MoviesInTheatres/MoviesInTheatres'
+import MovieDetail from './MovieDetail/MovieDetail'
 import App from '../containers/App';
 
 
@@ -50,6 +51,7 @@ render(){
      <Route exact={true} path="/containers" component={App}/>
       <Route exact={true} path="/components/BestMoviesFrom" component={BestMoviesFrom}/>
        <Route exact={true} path="/components/MoviesInTheatres" component={MoviesInTheatres}/>
+       <Route exact={true} path="/components/MovieDetail" component={MovieDetail} />
     </Switch>
 
 </div>  
@@ -59,20 +61,6 @@ render(){
 }
 
 export default Toolbar;
-
-//<nav className="zone blue sticky" id = "myTopnav" >
-  //  <ul className="main-nav">
-    //  <li className="apples"><a href=""></a>TinyCinema</li>
-      //<li className="push" onClick = {this.myFunction}>&#9776;</li>
-      //</ul>
-        //<div className="push">
-   //</div>
-     // </nav>
-      //<br/>
-      //<br/>
-      //<br/>
-      //<br/>
-     // <br/>
 
 
 
