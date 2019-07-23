@@ -17,18 +17,6 @@ class Toolbar extends Component {
     }
   }
 
- myFunction = () => {
-
- 	console.log("clicked");
-
-  // var x = document.getElementById("myTopnav");
-  // if (x.classNames === "topnav") {
-  //   x.classNames += " responsive";
-  // } else {
-  //   x.classNames = "topnav";
-  // }
-}
-
 render(){
    return(
     <Router>
@@ -51,7 +39,7 @@ render(){
      <Route exact={true} path="/containers" component={App}/>
       <Route exact={true} path="/components/BestMoviesFrom" component={BestMoviesFrom}/>
        <Route exact={true} path="/components/MoviesInTheatres" component={MoviesInTheatres}/>
-       <Route exact={true} path="/components/MovieDetail" component={MovieDetail} />
+       <Route exact={true} path="/components/MovieDetail/:movieId" component={MovieDetail} />
     </Switch>
 
 </div>  
