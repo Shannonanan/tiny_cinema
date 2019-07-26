@@ -13,6 +13,7 @@ class MovieDetail extends React.Component {
       movie: [],
     };
 
+
      this.movieId = props.match.params.movieId;
   }
 

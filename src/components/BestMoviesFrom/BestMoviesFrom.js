@@ -6,8 +6,8 @@ import Scroll from '../Scroll';
 
 
 class BestMoviesFrom extends React.Component {
-	constructor(){
-		super()
+	constructor(props){
+		super(props)
 		this.state = {
 		movies: [],
 		}
@@ -19,6 +19,11 @@ componentDidMount(){
 	.then(response => {this.setState({movies: response.results})})
 }
 
+
+  movieCallback = (id) => {
+     this.props.history.push('./MovieDetail/' + id);
+  }
+
   render() {
       const {movies} = this.state;
     
@@ -28,7 +33,7 @@ componentDidMount(){
         <div className = 'tc' >
         <h1>Best Movies From...</h1> 
         <Scroll>
-        <MoviesList movies={movies}/>
+        <MoviesList movieCallback= { (id) => this.movieCallback(id)} movies={movies}/>
         </Scroll>
           </div>
         );
