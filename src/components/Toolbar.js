@@ -6,7 +6,7 @@ import { Route, Link,Switch, BrowserRouter as Router } from 'react-router-dom';
 import BestMoviesFrom from './BestMoviesFrom/BestMoviesFrom';
 import MoviesInTheatres from './MoviesInTheatres/MoviesInTheatres'
 import MovieDetail from './MovieDetail/MovieDetail'
-import App from '../containers/App';
+import PopularMovies from './PopularMovies/PopularMovies';
 
 
 class Toolbar extends Component {
@@ -19,7 +19,6 @@ class Toolbar extends Component {
 
 render(){
    return(
-    <Router>
     <div>
  <div className="blue topnav" id="myTopnav">
  <div className="dropdown">
@@ -27,23 +26,15 @@ render(){
     <i className="fa fa-caret-down"></i>
   </button>
   <div className="dropdown-content">
-    <a href="#" ><Link to="/containers">Most popular</Link></a>
+    <a href="#" ><Link to="/components/PopularMovies">Most popular</Link></a>
     <a href="#"><Link to="/components/BestMoviesFrom">Best movies from...</Link></a>
     <a href="#"><Link to="/components/MoviesInTheatres">Movies in theatres</Link></a>
   </div>
  </div> 
  <p className="push" id="title" href="" >TinyCinema</p>
 </div>
-
- <Switch>
-     <Route exact={true} path="/containers" component={App}/>
-      <Route exact={true} path="/components/BestMoviesFrom" component={BestMoviesFrom}/>
-       <Route exact={true} path="/components/MoviesInTheatres" component={MoviesInTheatres}/>
-       <Route exact={true} path="/components/MovieDetail/:movieId" component={MovieDetail} />
-    </Switch>
-
 </div>  
- </Router>
+
     );
 }   
 }
