@@ -8,6 +8,7 @@ import { Route, Link,Switch, BrowserRouter as Router } from 'react-router-dom';
 import BestMoviesFrom from '../components/BestMoviesFrom/BestMoviesFrom';
 import MoviesInTheatres from '../components/MoviesInTheatres/MoviesInTheatres';
 import MovieDetail from '../components/MovieDetail/MovieDetail';
+import MovieReviews from '../components/MovieReviews/MovieReviews';
 import PopularMovies from '../components/PopularMovies/PopularMovies';
 
 class App extends Component {
@@ -26,6 +27,7 @@ class App extends Component {
       <Route exact={true} path="/components/BestMoviesFrom" component={BestMoviesFrom}/>
        <Route exact={true} path="/components/MoviesInTheatres" component={MoviesInTheatres}/>
        <Route exact={true} path="/components/MovieDetail/:movieId" component={MovieDetail} />
+       <Route exact={true} path="/components/MovieReviews/:movieId" component={MovieReviews} />
     </Switch>
           
           </div>
