@@ -1,7 +1,5 @@
 import React from 'react';
 import Movie from './Movie';
-import { Route, Link,Switch} from 'react-router-dom';
-import MovieDetail from './MovieDetail/MovieDetail'
 
 
 const MoviesList = (props) => {

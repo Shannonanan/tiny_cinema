@@ -3,6 +3,7 @@ import './MovieReviews.css';
 import MoviesList from '../MoviesList';
 import Toolbar from '../Toolbar';
 import Scroll from '../Scroll';
+import ReviewList from '../ReviewList';
 
 
 class MovieReviews extends React.Component {
@@ -11,12 +12,14 @@ class MovieReviews extends React.Component {
 		this.state = {
 		movies: [],
 		}
+
+    this.movieId = props.match.params.movieId;
 	}
 
 	componentDidMount(){
-		  fetch(`http://api.themoviedb.org/3/movie/420818?api_key=&append_to_response=reviews`)
+		  fetch(`http://api.themoviedb.org/3/movie/${this.movieId}?api_key=&append_to_response=reviews`)
       .then(response => response.json())
-     .then(response => {this.setState({movie: response})});
+     .then(response => {this.setState({movies: response})});
 
 	}
 
@@ -25,14 +28,14 @@ class MovieReviews extends React.Component {
     
     const {movies} = this.state;
     
-    return typeof(movies) == 'undefined' ?
+    return typeof(movies.reviews) == 'undefined' ?
         <h1>Loading...</h1> :
        (
         <div className = 'tc'>
-        <h1>Movies Reviews</h1>
+        <h1>Movie Reviews</h1>
         <Scroll>
-       <p>test review</p>
-        </Scroll>
+       <ReviewList reviews = {movies.reviews.results}/>
+       </Scroll>
           
           </div>
         );
