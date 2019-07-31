@@ -28,10 +28,8 @@ class MovieDetail extends React.Component {
   }
 
 
-    showTrailer = (trailerId) => {
-     
-    this.props.history.push('../MovieReviews/' + trailerId);
-  
+    showReviews= (movieId) => { 
+    this.props.history.push('../MovieReviews/' + movieId);
   }
   
 
@@ -47,7 +45,7 @@ render() {
         <h1>{movie.title}</h1>
         <img alt= 'poster' height="400px" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
         <p>{movie.overview}</p>
-       <div onClick={() => this.showTrailer(movie.id)} >click for review</div>
+       <button onClick={() => this.showReviews(movie.id)} >reviews</button>
          <button> <a href= {`https://www.youtube.com/watch?v=${movie.videos.results[0].key}`}>trailer</a></button>
           </div>
         );
