@@ -4,6 +4,8 @@ import MoviesList from '../MoviesList';
 import Toolbar from '../Toolbar';
 import Scroll from '../Scroll';
 
+
+
 class MovieDetail extends React.Component {
 
   constructor(props) {
@@ -11,31 +13,42 @@ class MovieDetail extends React.Component {
 
     this.state = {
       movie: [],
+      trailerId: ""
     };
 
 
      this.movieId = props.match.params.movieId;
   }
 
-  componentDidMount(){
-    fetch(`https://api.themoviedb.org/3/movie/${this.movieId}?api_key=&language=en-US`)
+  componentWillMount(){
+    fetch(`https://api.themoviedb.org/3/movie/${this.movieId}?api_key=&append_to_response=videos`)
       .then(response => response.json())
      .then(response => {this.setState({movie: response})});
 
   }
 
+
+    showTrailer = (trailerId) => {
+     
+    this.props.history.push('../MovieReviews/' + trailerId);
+  
+  }
+  
+
 render() {
-    
+     
     const {movie} = this.state;
-    console.log(movie);
-    return typeof(movie) == 'undefined' ?
+    const trailer = '';
+    
+    return typeof(movie.videos) == 'undefined' ?
         <h1>Loading...</h1> :
        (
         <div className = 'tc route'>
         <h1>{movie.title}</h1>
         <img alt= 'poster' height="400px" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
         <p>{movie.overview}</p>
-          
+       <div onClick={() => this.showTrailer(movie.id)} >click for review</div>
+         <button> <a href= {`https://www.youtube.com/watch?v=${movie.videos.results[0].key}`}>trailer</a></button>
           </div>
         );
   }
