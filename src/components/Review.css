@@ -1,0 +1,7 @@
+.ReviewText {
+	font-family: sans-serif;
+	font-size: 1em;
+	word-wrap: wrap;
+	width: 300px;
+	text-align: center;
+}
