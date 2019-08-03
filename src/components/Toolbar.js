@@ -3,7 +3,7 @@ import './Toolbar.css';
 import { faAlignJustify } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Route, Link,Switch, BrowserRouter as Router } from 'react-router-dom';
-import BestMoviesFrom from './BestMoviesFrom/BestMoviesFrom';
+import SearchMovies from './SearchMovies/SearchMovies';
 import MoviesInTheatres from './MoviesInTheatres/MoviesInTheatres'
 import MovieDetail from './MovieDetail/MovieDetail'
 import PopularMovies from './PopularMovies/PopularMovies';
@@ -27,7 +27,7 @@ render(){
   </button>
   <div className="dropdown-content">
     <a href="#" ><Link to="/components/PopularMovies">Most popular</Link></a>
-    <a href="#"><Link to="/components/BestMoviesFrom">Best movies from...</Link></a>
+    <a href="#"><Link to="/components/SearchMovies">SearchMovies</Link></a>
     <a href="#"><Link to="/components/MoviesInTheatres">Movies in theatres</Link></a>
   </div>
  </div> 
